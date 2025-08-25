@@ -22,14 +22,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={cn(
-        "fixed top-10 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isHovered ? "bg-white shadow-lg" : "bg-transparent"
-      )}
+      className="fixed top-10 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <nav className="mx-auto w-11/12 px-4 sm:px-6 lg:px-8" aria-label="Top">
+      {/* Glassy white background */}
+      <div className={cn(
+        "absolute inset-0 transition-all duration-300 ease-in-out",
+        isHovered ? "navbar-glassy-white shadow-lg" : "bg-transparent"
+      )} />
+
+      <nav className="relative mx-auto w-11/12 px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex h-20 items-center justify-between">
           {/* Left side - Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8 lg:flex-1">
@@ -38,7 +41,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "font-red-hat font-medium transition-all duration-300 relative group",
+                  "font-red-hat font-medium text-sm transition-all duration-300 relative group",
                   isHovered
                     ? "text-gray-800 hover:text-black"
                     : "text-white/90 hover:text-white"
@@ -54,14 +57,23 @@ export default function Navbar() {
           </div>
 
           {/* Center - Logo */}
-          <div className="flex items-center justify-center py-4">
-            <Link href="/" className="flex items-center mx-8">
+          <div className="flex items-center justify-center py-6 relative z-10">
+            <Link href="/" className="flex items-center mx-4 sm:mx-12 px-2 sm:px-6 py-2">
+              {/* Desktop Logo - White by default, black on hover */}
               <Image
-                src="/logo/sultana-silk-logo.png"
+                src={isHovered ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
                 alt="Sultana Silk"
-                width={180}
-                height={72}
-                className="h-18 w-auto transition-opacity duration-300"
+                width={140}
+                height={56}
+                className="h-14 w-auto transition-all duration-300 hidden sm:block"
+              />
+              {/* Mobile Logo - White by default, black on hover */}
+              <Image
+                src={isHovered ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
+                alt="Sultana Silk"
+                width={110}
+                height={44}
+                className="h-11 w-auto transition-all duration-300 block sm:hidden"
               />
             </Link>
           </div>
@@ -149,7 +161,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "block px-4 py-3 font-red-hat font-medium transition-colors duration-300",
+                  "block px-4 py-3 font-red-hat font-medium text-sm transition-colors duration-300",
                   isHovered
                     ? "text-gray-800 hover:text-black hover:bg-gray-100"
                     : "text-white/90 hover:text-white hover:bg-white/10"
