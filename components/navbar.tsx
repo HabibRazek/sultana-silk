@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, ShoppingBag, Search, User } from 'lucide-react'
@@ -18,7 +18,17 @@ const navigation = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const { cartItemsCount, toggleCart } = useStore()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <header
@@ -29,7 +39,7 @@ export default function Navbar() {
       {/* Glassy white background */}
       <div className={cn(
         "absolute inset-0 transition-all duration-300 ease-in-out",
-        isHovered ? "navbar-glassy-white shadow-lg" : "bg-transparent"
+        (isHovered || isScrolled) ? "navbar-glassy-white shadow-lg" : "bg-transparent"
       )} />
 
       <nav className="relative mx-auto w-11/12 px-4 sm:px-6 lg:px-8" aria-label="Top">
@@ -42,7 +52,7 @@ export default function Navbar() {
                 href={item.href}
                 className={cn(
                   "font-red-hat font-medium text-sm transition-all duration-300 relative group",
-                  isHovered
+                  (isHovered || isScrolled)
                     ? "text-gray-800 hover:text-black"
                     : "text-white/90 hover:text-white"
                 )}
@@ -50,7 +60,7 @@ export default function Navbar() {
                 {item.name}
                 <span className={cn(
                   "absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full",
-                  isHovered ? "bg-black" : "bg-white"
+                  (isHovered || isScrolled) ? "bg-black" : "bg-white"
                 )}></span>
               </Link>
             ))}
@@ -59,17 +69,17 @@ export default function Navbar() {
           {/* Center - Logo */}
           <div className="flex items-center justify-center py-6 relative z-10">
             <Link href="/" className="flex items-center mx-4 sm:mx-12 px-2 sm:px-6 py-2">
-              {/* Desktop Logo - White by default, black on hover */}
+              {/* Desktop Logo - White by default, black on hover/scroll */}
               <Image
-                src={isHovered ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
+                src={(isHovered || isScrolled) ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
                 alt="Sultana Silk"
                 width={140}
                 height={56}
                 className="h-14 w-auto transition-all duration-300 hidden sm:block"
               />
-              {/* Mobile Logo - White by default, black on hover */}
+              {/* Mobile Logo - White by default, black on hover/scroll */}
               <Image
-                src={isHovered ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
+                src={(isHovered || isScrolled) ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
                 alt="Sultana Silk"
                 width={110}
                 height={44}
@@ -83,7 +93,7 @@ export default function Navbar() {
             {/* Search */}
             <button className={cn(
               "p-2 transition-colors duration-300",
-              isHovered
+              (isHovered || isScrolled)
                 ? "text-gray-800 hover:text-black"
                 : "text-white/90 hover:text-white"
             )}>
@@ -94,7 +104,7 @@ export default function Navbar() {
             {/* User Account */}
             <button className={cn(
               "p-2 transition-colors duration-300",
-              isHovered
+              (isHovered || isScrolled)
                 ? "text-gray-800 hover:text-black"
                 : "text-white/90 hover:text-white"
             )}>
@@ -107,7 +117,7 @@ export default function Navbar() {
               onClick={toggleCart}
               className={cn(
                 "relative p-2 transition-colors duration-300",
-                isHovered
+                (isHovered || isScrolled)
                   ? "text-gray-800 hover:text-black"
                   : "text-white/90 hover:text-white"
               )}
@@ -116,7 +126,7 @@ export default function Navbar() {
               {cartItemsCount() > 0 && (
                 <span className={cn(
                   "absolute -top-1 -right-1 h-5 w-5 text-white text-xs font-medium rounded-full flex items-center justify-center",
-                  isHovered ? "bg-gray-800" : "bg-white/20"
+                  (isHovered || isScrolled) ? "bg-gray-800" : "bg-white/20"
                 )}>
                   {cartItemsCount()}
                 </span>
@@ -129,7 +139,7 @@ export default function Navbar() {
               type="button"
               className={cn(
                 "lg:hidden p-2 transition-colors duration-300",
-                isHovered
+                (isHovered || isScrolled)
                   ? "text-gray-800 hover:text-black"
                   : "text-white/90 hover:text-white"
               )}
@@ -154,7 +164,7 @@ export default function Navbar() {
         >
           <div className={cn(
             "py-4 space-y-1 border-t transition-colors duration-300",
-            isHovered ? "border-gray-200" : "border-white/20"
+            (isHovered || isScrolled) ? "border-gray-200" : "border-white/20"
           )}>
             {navigation.map((item) => (
               <Link
@@ -162,7 +172,7 @@ export default function Navbar() {
                 href={item.href}
                 className={cn(
                   "block px-4 py-3 font-red-hat font-medium text-sm transition-colors duration-300",
-                  isHovered
+                  (isHovered || isScrolled)
                     ? "text-gray-800 hover:text-black hover:bg-gray-100"
                     : "text-white/90 hover:text-white hover:bg-white/10"
                 )}
