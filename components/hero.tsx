@@ -33,9 +33,12 @@ export default function Hero() {
         aria-label="Elegant woman wearing luxury silk scarf on mobile"
       />
 
+      {/* Black Overlay Effect */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
       {/* Main Content Container */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 flex items-center h-full">
+        <div className="w-9/12 px-4 sm:px-6 lg:px-12 text-left">
           {/* Primary Heading - SEO Optimized */}
           <h1 className="font-red-hat text-6xl sm:text-7xl lg:text-8xl font-light text-white leading-tight mb-8 tracking-wide">
             Elegance in Every Thread
