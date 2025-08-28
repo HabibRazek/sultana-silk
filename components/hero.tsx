@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import TypewriterText from '@/components/smoothui/ui/TypewriterText'
 
 /**
  * Hero section component featuring luxury silk scarf branding
@@ -37,27 +36,20 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 flex items-center h-full">
-        <div className="w-9/12 px-4 sm:px-6 lg:px-12 text-left">
+      <div className="relative z-10 flex items-center h-full sm:mr-[500px]">
+        <div className="w-full px-4 sm:px-6 lg:px-12 text-left">
           {/* Primary Heading - SEO Optimized */}
-          <h1 className="font-red-hat text-6xl sm:text-7xl lg:text-8xl font-light text-white leading-tight mb-8 tracking-wide">
-            Elegance in Every Thread
+          <h1 className="font-red-hat text-6xl sm:text-7xl lg:text-8xl font-light text-center text-white leading-tight mb-8 tracking-wide">
+            Elegance in <br></br>Every Thread
           </h1>
 
           {/* Animated Subtitle - Brand Positioning */}
-          <div className="mb-12">
-            <TypewriterText
-              typingSpeed={75}
-              startDelay={1200}
-              className="font-red-hat text-xl sm:text-2xl lg:text-3xl font-light text-white/90 tracking-wide"
-              showCursor={false}
-            >
-              Handcrafted luxury silk scarves for the discerning woman
-            </TypewriterText>
+          <div className=" font-red-hat text-xl sm:text-2xl lg:text-3xl font-light text-center text-white leading-tight mb-8 tracking-wide">
+            Handcrafted luxury silk scarves for <br /> the discerning woman
           </div>
 
           {/* Call-to-Action */}
-          <div className="mt-12">
+          <div className="mt-12 text-center">
             <Link
               href="/collection"
               className="btn-luxury font-red-hat inline-flex items-center justify-center text-lg font-medium tracking-wide uppercase transition-transform hover:scale-105"
