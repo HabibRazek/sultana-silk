@@ -25,34 +25,46 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
+    <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="font-luxurious text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-wide">
+        <div className="text-center mb-24">
+          {/* Section Label */}
+          <div className="mb-6">
+            <span className="font-caslon text-sm font-normal text-amber-600 tracking-[0.3em] uppercase">
+              Contact Us
+            </span>
+          </div>
+
+          <h2 className="font-caslon text-6xl lg:text-7xl font-normal text-gray-900 mb-8 tracking-wide leading-tight">
             Get in Touch
           </h2>
-          <p className="font-red-hat text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-caslon text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Experience luxury personalized. Contact us for bespoke consultations and exclusive collections
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Contact Information */}
-          <div>
-            <h3 className="font-luxurious text-3xl font-light text-gray-900 mb-8 tracking-wide">
-              Visit Our Boutique
-            </h3>
-            
+          <div className="space-y-12">
+            <div>
+              <h3 className="font-caslon text-4xl font-normal text-gray-900 mb-8 tracking-wide">
+                Visit Our Boutique
+              </h3>
+              <p className="font-caslon text-lg text-gray-600 leading-relaxed">
+                Step into a world of luxury where every detail reflects our commitment to excellence and timeless elegance.
+              </p>
+            </div>
+
             <div className="space-y-8">
               {/* Location */}
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-white" />
+              <div className="flex items-start space-x-6 group">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-6 h-6 text-amber-600" />
                 </div>
                 <div>
-                  <h4 className="font-red-hat font-medium text-gray-900 mb-2">Location</h4>
-                  <p className="font-red-hat text-gray-600 leading-relaxed">
+                  <h4 className="font-caslon text-xl font-normal text-gray-900 mb-3 tracking-wide">Location</h4>
+                  <p className="font-caslon text-lg text-gray-600 leading-relaxed">
                     Dubai, UAE<br />
                     Luxury Fashion District
                   </p>
@@ -60,39 +72,39 @@ export default function ContactSection() {
               </div>
 
               {/* Phone */}
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-white" />
+              <div className="flex items-start space-x-6 group">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="w-6 h-6 text-amber-600" />
                 </div>
                 <div>
-                  <h4 className="font-red-hat font-medium text-gray-900 mb-2">Phone</h4>
-                  <p className="font-red-hat text-gray-600">
+                  <h4 className="font-caslon text-xl font-normal text-gray-900 mb-3 tracking-wide">Phone</h4>
+                  <p className="font-caslon text-lg text-gray-600">
                     +971 50 185 9905
                   </p>
                 </div>
               </div>
 
               {/* Email */}
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-white" />
+              <div className="flex items-start space-x-6 group">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="w-6 h-6 text-amber-600" />
                 </div>
                 <div>
-                  <h4 className="font-red-hat font-medium text-gray-900 mb-2">Email</h4>
-                  <p className="font-red-hat text-gray-600">
+                  <h4 className="font-caslon text-xl font-normal text-gray-900 mb-3 tracking-wide">Email</h4>
+                  <p className="font-caslon text-lg text-gray-600">
                     info@sultanasilk.com
                   </p>
                 </div>
               </div>
 
               {/* Hours */}
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-white" />
+              <div className="flex items-start space-x-6 group">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Clock className="w-6 h-6 text-amber-600" />
                 </div>
                 <div>
-                  <h4 className="font-red-hat font-medium text-gray-900 mb-2">Hours</h4>
-                  <div className="font-red-hat text-gray-600 space-y-1">
+                  <h4 className="font-caslon text-xl font-normal text-gray-900 mb-3 tracking-wide">Hours</h4>
+                  <div className="font-caslon text-lg text-gray-600 space-y-2">
                     <p>Sunday - Thursday: 10:00 AM - 8:00 PM</p>
                     <p>Friday - Saturday: 10:00 AM - 10:00 PM</p>
                   </div>
@@ -101,59 +113,81 @@ export default function ContactSection() {
             </div>
 
             {/* Services */}
-            <div className="mt-12">
-              <h4 className="font-luxurious text-2xl font-light text-gray-900 mb-6 tracking-wide">
+            <div className="mt-16 p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl">
+              <h4 className="font-caslon text-3xl font-normal text-gray-900 mb-8 tracking-wide">
                 Our Services
               </h4>
-              <div className="space-y-3 font-red-hat text-gray-600">
-                <p>• Personal styling consultations</p>
-                <p>• Custom scarf design</p>
-                <p>• Gift wrapping and presentation</p>
-                <p>• International shipping</p>
-                <p>• Care and maintenance guidance</p>
+              <div className="grid grid-cols-1 gap-4 font-caslon text-lg text-gray-700">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <p>Personal styling consultations</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <p>Custom scarf design</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <p>Gift wrapping and presentation</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <p>International shipping</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <p>Care and maintenance guidance</p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <h3 className="font-luxurious text-3xl font-light text-gray-900 mb-8 tracking-wide">
-              Send us a Message
-            </h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block font-red-hat text-sm font-medium text-gray-700 mb-2">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors font-red-hat"
-                  required
-                />
+          <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-10 shadow-2xl border border-gray-100">
+            <div className="mb-10">
+              <h3 className="font-caslon text-4xl font-normal text-gray-900 mb-4 tracking-wide">
+                Send us a Message
+              </h3>
+              <p className="font-caslon text-lg text-gray-600">
+                Share your vision with us and let&apos;s create something extraordinary together.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block font-caslon text-lg font-normal text-gray-700 mb-3 tracking-wide">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 font-caslon text-lg bg-white/80 backdrop-blur-sm"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block font-caslon text-lg font-normal text-gray-700 mb-3 tracking-wide">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 font-caslon text-lg bg-white/80 backdrop-blur-sm"
+                    required
+                  />
+                </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block font-red-hat text-sm font-medium text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors font-red-hat"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block font-red-hat text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="phone" className="block font-caslon text-lg font-normal text-gray-700 mb-3 tracking-wide">
                   Phone Number
                 </label>
                 <input
@@ -162,32 +196,34 @@ export default function ContactSection() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors font-red-hat"
+                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 font-caslon text-lg bg-white/80 backdrop-blur-sm"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block font-red-hat text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block font-caslon text-lg font-normal text-gray-700 mb-3 tracking-wide">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors font-red-hat resize-none"
+                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 font-caslon text-lg resize-none bg-white/80 backdrop-blur-sm"
                   placeholder="Tell us about your interest in our luxury silk scarves..."
                   required
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                className="w-full btn-luxury font-red-hat text-lg font-medium tracking-wide uppercase"
-              >
-                Send Message
-              </button>
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 py-5 rounded-xl font-caslon text-xl font-normal tracking-wide uppercase transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+                >
+                  Send Message
+                </button>
+              </div>
             </form>
           </div>
         </div>

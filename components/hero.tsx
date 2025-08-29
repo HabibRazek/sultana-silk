@@ -2,14 +2,11 @@
 
 import Link from 'next/link'
 
-/**
- * Hero section component featuring luxury silk scarf branding
- * Includes animated typewriter text and call-to-action
- */
+
 export default function Hero() {
   return (
     <section
-      className="relative h-screen flex items-center justify-center overflow-hidden pt-10"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
       aria-label="Sultana Silk luxury scarves hero section"
     >
       {/* Background Image - Desktop */}
@@ -38,12 +35,12 @@ export default function Hero() {
       <div className="relative z-10 flex items-center h-full sm:mr-[500px]">
         <div className="w-full px-4 sm:px-6 lg:px-12 text-left">
           {/* Primary Heading - SEO Optimized */}
-          <h1 className="font-red-hat text-6xl sm:text-7xl lg:text-8xl font-light text-center text-white leading-tight mb-8 tracking-wide">
+          <h1 className="font-caslon text-7xl sm:text-8xl lg:text-9xl font-normal text-center text-amber-300 leading-tight mb-8 tracking-wide">
             Elegance in <br></br>Every Thread
           </h1>
 
           {/* Animated Subtitle - Brand Positioning */}
-          <div className=" font-red-hat text-xl sm:text-2xl lg:text-3xl font-light text-center text-white leading-tight mb-8 tracking-wide">
+          <div className="font-caslon text-2xl sm:text-3xl lg:text-4xl font-normal text-center text-amber-200 leading-tight mb-8 tracking-wide">
             Handcrafted luxury silk scarves for <br /> the discerning woman
           </div>
 
@@ -51,7 +48,7 @@ export default function Hero() {
           <div className="mt-12 text-center">
             <Link
               href="/collection"
-              className="btn-luxury font-red-hat inline-flex items-center justify-center text-lg font-medium tracking-wide uppercase transition-transform hover:scale-105"
+              className="btn-luxury font-caslon inline-flex items-center justify-center text-xl font-normal tracking-wide uppercase transition-transform hover:scale-105"
               aria-label="Shop luxury silk scarves collection"
             >
               Shop Now

@@ -135,6 +135,10 @@
     .font-red-hat {
         font-family: var(--font-red-hat-display), sans-serif;
     }
+
+    .font-caslon {
+        font-family: var(--font-libre-caslon), serif;
+    }
 }
 
 @layer components {

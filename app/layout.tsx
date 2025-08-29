@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Luxurious_Roman, Red_Hat_Display } from "next/font/google";
+import { Playfair_Display, Inter, Luxurious_Roman, Red_Hat_Display, Libre_Caslon_Text } from "next/font/google";
 import "./globals.css";
 
 // Luxury serif font for headings and brand
@@ -29,6 +29,14 @@ const redHatDisplay = Red_Hat_Display({
   variable: "--font-red-hat-display",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+// Libre Caslon Text font for elegant serif typography
+const libreCaslonText = Libre_Caslon_Text({
+  variable: "--font-libre-caslon",
+  subsets: ["latin"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -66,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${playfairDisplay.variable} ${inter.variable} ${luxuriousRoman.variable} ${redHatDisplay.variable} font-sans antialiased bg-white text-gray-900 selection:bg-amber-100 selection:text-amber-900`}
+        className={`${playfairDisplay.variable} ${inter.variable} ${luxuriousRoman.variable} ${redHatDisplay.variable} ${libreCaslonText.variable} font-sans antialiased bg-white text-gray-900 selection:bg-amber-100 selection:text-amber-900`}
       >
         {children}
       </body>

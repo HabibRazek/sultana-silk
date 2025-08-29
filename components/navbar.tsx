@@ -3,9 +3,16 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, ShoppingBag, Search, User } from 'lucide-react'
+import { Menu, ShoppingBag, Search, User } from 'lucide-react'
 import { useStore } from '@/lib/store'
 import { cn } from '@/lib/utils'
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 
 const navigation = [
   { name: 'HOME', href: '/' },
@@ -16,8 +23,6 @@ const navigation = [
 ]
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const { cartItemsCount, toggleCart } = useStore()
 
@@ -32,38 +37,52 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-10 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
     >
       {/* Glassy white background */}
       <div className={cn(
         "absolute inset-0 transition-all duration-300 ease-in-out",
-        (isHovered || isScrolled) ? "navbar-glassy-white shadow-lg" : "bg-transparent"
+        isScrolled ? "navbar-glassy-white shadow-lg" : "bg-transparent"
       )} />
 
       <nav className="relative mx-auto w-11/12 px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex h-20 items-center justify-between">
-          {/* Left side - Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-8 lg:flex-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "font-red-hat font-medium text-sm transition-all duration-300 relative group",
-                  (isHovered || isScrolled)
-                    ? "text-gray-800 hover:text-black"
-                    : "text-white/90 hover:text-white"
-                )}
-              >
-                {item.name}
-                <span className={cn(
-                  "absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full",
-                  (isHovered || isScrolled) ? "bg-black" : "bg-white"
-                )}></span>
-              </Link>
-            ))}
+          {/* Left side - Navigation Menu Button */}
+          <div className="flex items-center flex-1">
+            <Sheet>
+              <SheetTrigger asChild>
+                <button
+                  type="button"
+                  className={cn(
+                    "p-2 transition-colors duration-300",
+                    isScrolled
+                      ? "text-black hover:text-gray-800"
+                      : "text-amber-200 hover:text-amber-300"
+                  )}
+                >
+                  <Menu className="h-5 w-5" aria-hidden="true" />
+                  <span className="sr-only">Open navigation menu</span>
+                </button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[350px] sm:w-[400px] bg-white">
+                <SheetHeader>
+                  <SheetTitle className="sr-only">
+                    Navigation
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col space-y-8 mt-12">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="font-caslon font-normal text-lg text-gray-800 hover:text-amber-700 transition-colors duration-300 py-6 pl-6 border-b border-gray-100 last:border-b-0"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
 
           {/* Center - Logo */}
@@ -71,15 +90,15 @@ export default function Navbar() {
             <Link href="/" className="flex items-center mx-4 sm:mx-12 px-2 sm:px-6 py-2">
               {/* Desktop Logo - White by default, black on hover/scroll */}
               <Image
-                src={(isHovered || isScrolled) ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
+                src={isScrolled ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
                 alt="Sultana Silk"
                 width={140}
                 height={56}
                 className="h-14 w-auto transition-all duration-300 hidden sm:block"
               />
-              {/* Mobile Logo - White by default, black on hover/scroll */}
+              {/* Mobile Logo - White by default, black on scroll */}
               <Image
-                src={(isHovered || isScrolled) ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
+                src={isScrolled ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
                 alt="Sultana Silk"
                 width={110}
                 height={44}
@@ -93,9 +112,9 @@ export default function Navbar() {
             {/* Search */}
             <button className={cn(
               "p-2 transition-colors duration-300",
-              (isHovered || isScrolled)
-                ? "text-gray-800 hover:text-black"
-                : "text-white/90 hover:text-white"
+              isScrolled
+                ? "text-black hover:text-gray-800"
+                : "text-amber-200 hover:text-amber-300"
             )}>
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>
@@ -104,9 +123,9 @@ export default function Navbar() {
             {/* User Account */}
             <button className={cn(
               "p-2 transition-colors duration-300",
-              (isHovered || isScrolled)
-                ? "text-gray-800 hover:text-black"
-                : "text-white/90 hover:text-white"
+              isScrolled
+                ? "text-black hover:text-gray-800"
+                : "text-amber-200 hover:text-amber-300"
             )}>
               <User className="h-5 w-5" />
               <span className="sr-only">Account</span>
@@ -117,16 +136,16 @@ export default function Navbar() {
               onClick={toggleCart}
               className={cn(
                 "relative p-2 transition-colors duration-300",
-                (isHovered || isScrolled)
-                  ? "text-gray-800 hover:text-black"
-                  : "text-white/90 hover:text-white"
+                isScrolled
+                  ? "text-black hover:text-gray-800"
+                  : "text-amber-200 hover:text-amber-300"
               )}
             >
               <ShoppingBag className="h-5 w-5" />
               {cartItemsCount() > 0 && (
                 <span className={cn(
                   "absolute -top-1 -right-1 h-5 w-5 text-white text-xs font-medium rounded-full flex items-center justify-center",
-                  (isHovered || isScrolled) ? "bg-gray-800" : "bg-white/20"
+                  isScrolled ? "bg-black" : "bg-amber-300/80"
                 )}>
                   {cartItemsCount()}
                 </span>
@@ -134,55 +153,11 @@ export default function Navbar() {
               <span className="sr-only">Shopping cart</span>
             </button>
 
-            {/* Mobile menu button */}
-            <button
-              type="button"
-              className={cn(
-                "lg:hidden p-2 transition-colors duration-300",
-                (isHovered || isScrolled)
-                  ? "text-gray-800 hover:text-black"
-                  : "text-white/90 hover:text-white"
-              )}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <span className="sr-only">Open main menu</span>
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
+
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <div
-          className={cn(
-            'lg:hidden transition-all duration-300 ease-in-out overflow-hidden',
-            mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-          )}
-        >
-          <div className={cn(
-            "py-4 space-y-1 border-t transition-colors duration-300",
-            (isHovered || isScrolled) ? "border-gray-200" : "border-white/20"
-          )}>
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "block px-4 py-3 font-red-hat font-medium text-sm transition-colors duration-300",
-                  (isHovered || isScrolled)
-                    ? "text-gray-800 hover:text-black hover:bg-gray-100"
-                    : "text-white/90 hover:text-white hover:bg-white/10"
-                )}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
+
       </nav>
     </header>
   )
