@@ -59,8 +59,8 @@ export default function ContactSection() {
             <div className="space-y-8">
               {/* Location */}
               <div className="flex items-start space-x-6 group">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="w-6 h-6 text-amber-600" />
+                <div className="flex-shrink-0 w-16 h-16 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-caslon text-xl font-normal text-gray-900 mb-3 tracking-wide">Location</h4>
@@ -73,8 +73,8 @@ export default function ContactSection() {
 
               {/* Phone */}
               <div className="flex items-start space-x-6 group">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Phone className="w-6 h-6 text-amber-600" />
+                <div className="flex-shrink-0 w-16 h-16 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-caslon text-xl font-normal text-gray-900 mb-3 tracking-wide">Phone</h4>
@@ -86,8 +86,8 @@ export default function ContactSection() {
 
               {/* Email */}
               <div className="flex items-start space-x-6 group">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-6 h-6 text-amber-600" />
+                <div className="flex-shrink-0 w-16 h-16 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-caslon text-xl font-normal text-gray-900 mb-3 tracking-wide">Email</h4>
@@ -99,8 +99,8 @@ export default function ContactSection() {
 
               {/* Hours */}
               <div className="flex items-start space-x-6 group">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Clock className="w-6 h-6 text-amber-600" />
+                <div className="flex-shrink-0 w-16 h-16 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-caslon text-xl font-normal text-gray-900 mb-3 tracking-wide">Hours</h4>
@@ -119,23 +119,23 @@ export default function ContactSection() {
               </h4>
               <div className="grid grid-cols-1 gap-4 font-caslon text-lg text-gray-700">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
                   <p>Personal styling consultations</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
                   <p>Custom scarf design</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
                   <p>Gift wrapping and presentation</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
                   <p>International shipping</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
                   <p>Care and maintenance guidance</p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function ContactSection() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 font-caslon text-lg bg-white/80 backdrop-blur-sm"
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-black transition-all duration-300 font-caslon text-lg bg-white"
                     required
                   />
                 </div>
@@ -180,7 +180,7 @@ export default function ContactSection() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 font-caslon text-lg bg-white/80 backdrop-blur-sm"
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-black transition-all duration-300 font-caslon text-lg bg-white"
                     required
                   />
                 </div>
@@ -196,7 +196,7 @@ export default function ContactSection() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 font-caslon text-lg bg-white/80 backdrop-blur-sm"
+                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-black transition-all duration-300 font-caslon text-lg bg-white"
                 />
               </div>
 
@@ -210,7 +210,7 @@ export default function ContactSection() {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 font-caslon text-lg resize-none bg-white/80 backdrop-blur-sm"
+                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-black transition-all duration-300 font-caslon text-lg resize-none bg-white"
                   placeholder="Tell us about your interest in our luxury silk scarves..."
                   required
                 ></textarea>
@@ -219,7 +219,7 @@ export default function ContactSection() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 py-5 rounded-xl font-caslon text-xl font-normal tracking-wide uppercase transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+                  className="w-full bg-black hover:bg-gray-800 text-white px-8 py-5 rounded-xl font-caslon text-xl font-normal tracking-wide uppercase transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
                 >
                   Send Message
                 </button>
