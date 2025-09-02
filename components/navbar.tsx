@@ -64,18 +64,18 @@ export default function Navbar() {
                   <span className="sr-only">Open navigation menu</span>
                 </button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[350px] sm:w-[400px] bg-white">
+              <SheetContent side="left" className="w-[280px] sm:w-[300px] bg-white border-none">
                 <SheetHeader>
                   <SheetTitle className="sr-only">
                     Navigation
                   </SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col space-y-8 mt-12">
+                <div className="flex flex-col space-y-1 mt-12">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="font-caslon font-normal text-lg text-gray-800 hover:text-amber-700 transition-colors duration-300 py-6 pl-6 border-b border-gray-100 last:border-b-0"
+                      className="font-caslon font-normal text-sm text-gray-700 hover:text-amber-600 transition-colors duration-200 py-3 px-4"
                     >
                       {item.name}
                     </Link>

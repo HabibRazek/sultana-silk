@@ -9,25 +9,27 @@ export default function Hero() {
       className="relative h-screen flex items-center justify-center overflow-hidden"
       aria-label="Sultana Silk luxury scarves hero section"
     >
-      {/* Background Image - Desktop */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
-        style={{
-          backgroundImage: 'url(/hero-section/luxury-fashion-woman-black-suit-designer-scarf-red-background.jpeg)'
-        }}
-        role="img"
-        aria-label="Elegant woman wearing luxury silk scarf"
-      />
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-label="Sultana Silk luxury scarves video background"
+      >
+        <source src="/hero-section/sultana-silk-hero-section.mp4" type="video/mp4" />
+        {/* Fallback for browsers that don't support video */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/hero-section/luxury-fashion-woman-black-suit-designer-scarf-red-background.jpeg)'
+          }}
+        />
+      </video>
 
-      {/* Background Image - Mobile */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat block md:hidden"
-        style={{
-          backgroundImage: 'url(/hero-section/luxury-fashion-woman-black-suit-designer-scarf-red-background-mobile.jpeg)'
-        }}
-        role="img"
-        aria-label="Elegant woman wearing luxury silk scarf on mobile"
-      />
+      {/* Gradient Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent"></div>
 
 
 
