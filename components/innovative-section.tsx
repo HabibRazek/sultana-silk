@@ -32,7 +32,7 @@ export default function InnovativeSection() {
       setCurrentSlide((prev) => (prev + 1) % features.length)
     }, 4000)
     return () => clearInterval(timer)
-  }, [])
+  }, [features.length])
 
   return (
     <section className="py-12 bg-gradient-to-br from-gray-50 to-white overflow-hidden">

@@ -84,7 +84,7 @@ export default function AboutUsProcess() {
 
             {/* Description */}
             <p className="font-caslon text-base lg:text-lg text-gray-700 leading-relaxed tracking-wide">
-              Each step of the manufacturing process is carried out according to the strict specifications of the leatherworker's craft.
+              Each step of the manufacturing process is carried out according to the strict specifications of the leatherworker&apos;s craft.
             </p>
           </div>
 
