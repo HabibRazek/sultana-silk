@@ -9,24 +9,21 @@ export default function Hero() {
       className="relative h-screen flex items-center justify-center overflow-hidden"
       aria-label="Sultana Silk luxury scarves hero section"
     >
-      {/* Background Video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        aria-label="Sultana Silk luxury scarves video background"
-      >
-        <source src="/hero-section/sultana-silk-hero-section.mp4" type="video/mp4" />
-        {/* Fallback for browsers that don't support video */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/hero-section/luxury-fashion-woman-black-suit-designer-scarf-red-background.jpeg)'
-          }}
-        />
-      </video>
+      {/* Background Image for Desktop */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat hidden md:block"
+        style={{
+          backgroundImage: 'url(/hero-section/luxury-fashion-woman-black-suit-designer-scarf-red-background.jpeg)'
+        }}
+      ></div>
+
+      {/* Background Image for Mobile */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
+        style={{
+          backgroundImage: 'url(/hero-section/luxury-fashion-woman-black-suit-designer-scarf-red-background-mobile.jpeg)'
+        }}
+      ></div>
 
       {/* Gradient Overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent"></div>
@@ -34,28 +31,30 @@ export default function Hero() {
 
 
       {/* Main Content Container */}
-      <div className="relative z-10 flex items-center h-full sm:mr-[500px]">
-        <div className="w-full px-4 sm:px-6 lg:px-12 text-left">
-          {/* Primary Heading - SEO Optimized */}
-          <h1 className="font-caslon text-7xl sm:text-8xl lg:text-9xl font-normal text-center text-amber-300 leading-tight mb-8 tracking-wide">
-            Elegance in <br></br>Every Thread
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+          {/* Small Label */}
+          <p className="font-caslon text-sm sm:text-base text-white/80 mb-4 tracking-[0.3em] uppercase">
+            Trusted Source Finest Silk
+          </p>
+
+          {/* Main Heading */}
+          <h1 className="font-caslon text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-white mb-8 tracking-wide leading-tight">
+            WE BRING YOU<br />
+            CLOSER TO YOUR<br />
+            DREAM SILK.
           </h1>
 
-          {/* Animated Subtitle - Brand Positioning */}
-          <div className="font-caslon text-2xl sm:text-3xl lg:text-4xl font-normal text-center text-amber-200 leading-tight mb-8 tracking-wide">
-            Handcrafted luxury silk scarves for <br /> the discerning woman
-          </div>
-
-          {/* Call-to-Action */}
-          <div className="mt-12 text-center">
+          {/* Shop Now Button */}
+          <div className="mt-8">
             <Link
-              href="/collection"
-              className="btn-luxury font-caslon inline-flex items-center justify-center text-xl font-normal tracking-wide uppercase transition-transform hover:scale-105"
-              aria-label="Shop luxury silk scarves collection"
+              href="/shop"
+              className="inline-block border-2 border-white text-white bg-transparent hover:bg-white hover:text-black px-8 py-4 font-caslon text-lg font-normal tracking-wide uppercase transition-all duration-300 backdrop-blur-sm"
             >
               Shop Now
             </Link>
           </div>
+
         </div>
       </div>
     </section>

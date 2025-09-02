@@ -24,7 +24,7 @@ export default function Footer() {
                 alt="Sultana Silk"
                 width={180}
                 height={72}
-                className="h-16 w-auto filter brightness-0 invert"
+                className="h-16 w-auto "
               />
             </div>
             <p className="font-caslon text-gray-300 leading-relaxed mb-6 max-w-md text-lg">
