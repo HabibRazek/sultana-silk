@@ -1,32 +1,62 @@
 'use client'
 
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
+const heroImages = [
+  '/hero-section/1.jpeg',
+  '/hero-section/2.jpeg',
+  '/hero-section/3.jpeg',
+  '/hero-section/4.jpeg',
+  '/hero-section/5.jpeg'
+]
 
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(true)
+
+  useEffect(() => {
+    if (!isPlaying) return
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length)
+    }, 5000) // Change slide every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [isPlaying])
+
+
+
   return (
     <section
       className="relative h-screen flex items-center justify-center overflow-hidden"
       aria-label="Sultana Silk luxury scarves hero section"
+      onMouseEnter={() => setIsPlaying(false)}
+      onMouseLeave={() => setIsPlaying(true)}
     >
-      {/* Background Image for Desktop */}
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat hidden md:block"
-        style={{
-          backgroundImage: 'url(/hero-section/luxury-fashion-woman-black-suit-designer-scarf-red-background.jpeg)'
-        }}
-      ></div>
+      {/* Luxury Diaporama Background */}
+      <div className="absolute inset-0 w-full h-full">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide
+                ? 'opacity-100'
+                : 'opacity-0'
+            }`}
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+        ))}
+      </div>
 
-      {/* Background Image for Mobile */}
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
-        style={{
-          backgroundImage: 'url(/hero-section/luxury-fashion-woman-black-suit-designer-scarf-red-background-mobile.jpeg)'
-        }}
-      ></div>
-
-      {/* Gradient Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent"></div>
+      {/* Luxury Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30"></div>
 
 
 
@@ -34,29 +64,56 @@ export default function Hero() {
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           {/* Small Label */}
-          <p className="font-caslon text-sm sm:text-base text-white/80 mb-4 tracking-[0.3em] uppercase">
+          <p className="font-caslon text-sm sm:text-base text-white/90 mb-4 tracking-[0.3em] uppercase animate-fade-in-up">
             Trusted Source Finest Silk
           </p>
 
           {/* Main Heading */}
-          <h1 className="font-caslon text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-white mb-8 tracking-wide leading-tight">
+          <h1 className="font-caslon text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-white mb-8 tracking-wide leading-tight animate-fade-in-up animation-delay-200">
             WE BRING YOU<br />
             CLOSER TO YOUR<br />
-            DREAM SILK.
+            DREAM SILK
           </h1>
 
           {/* Shop Now Button */}
-          <div className="mt-8">
+          <div className="mt-8 animate-fade-in-up animation-delay-400">
             <Link
               href="/shop"
-              className="inline-block border-2 border-white text-white bg-transparent hover:bg-white hover:text-black px-8 py-4 font-caslon text-lg font-normal tracking-wide uppercase transition-all duration-300 backdrop-blur-sm"
+              className="group relative inline-block overflow-hidden border-2 border-amber-400 text-amber-400 bg-transparent hover:text-black px-8 py-4 font-caslon text-lg font-normal tracking-wide uppercase transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:scale-105"
             >
-              Shop Now
+              <span className="absolute inset-0 bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+              <span className="relative z-10">Shop Now</span>
             </Link>
           </div>
-
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in-up {
+          animation: fade-in-up 1s ease-out forwards;
+        }
+
+        .animation-delay-200 {
+          animation-delay: 0.2s;
+          opacity: 0;
+        }
+
+        .animation-delay-400 {
+          animation-delay: 0.4s;
+          opacity: 0;
+        }
+      `}</style>
     </section>
   )
 }

@@ -27,7 +27,7 @@ export default function Footer() {
                 className="h-16 w-auto "
               />
             </div>
-            <p className="font-caslon text-gray-300 leading-relaxed mb-6 max-w-md text-lg">
+            <p className="font-caslon text-gray-300 leading-relaxed mb-6 max-w-md text-sm">
               Sultana Silk represents the pinnacle of luxury silk craftsmanship. Each scarf
               is a masterpiece of elegance, designed for the discerning woman who appreciates
               timeless beauty and exceptional quality.
@@ -61,32 +61,32 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-caslon text-2xl font-normal mb-6 tracking-wide text-white">
+            <h3 className="font-caslon text-lg font-normal mb-4 tracking-wide text-white">
               Quick Links
             </h3>
-            <ul className="space-y-4 font-caslon">
+            <ul className="space-y-3 font-caslon">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
+                <Link href="/" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/collection" className="text-gray-300 hover:text-white transition-colors text-lg">
+                <Link href="/collection" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Collection
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white transition-colors text-lg">
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors text-sm">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors text-lg">
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/care-guide" className="text-gray-300 hover:text-white transition-colors text-lg">
+                <Link href="/care-guide" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Care Guide
                 </Link>
               </li>
@@ -95,25 +95,25 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-caslon text-2xl font-normal mb-6 tracking-wide text-white">
+            <h3 className="font-caslon text-lg font-normal mb-4 tracking-wide text-white">
               Contact
             </h3>
-            <div className="space-y-4 font-caslon">
+            <div className="space-y-3 font-caslon">
               <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                <span className="text-gray-300 text-lg">
+                <MapPin className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">
                   Dubai, UAE
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                <span className="text-gray-300 text-lg">
+                <Phone className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">
                   +971 50 185 9905
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                <span className="text-gray-300 text-lg">
+                <Mail className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">
                   info@sultanasilk.com
                 </span>
               </div>
@@ -121,19 +121,19 @@ export default function Footer() {
 
             {/* Newsletter */}
             <div className="mt-8">
-              <h4 className="font-caslon font-normal text-white mb-3 text-xl tracking-wide">
+              <h4 className="font-caslon font-normal text-white mb-3 text-base tracking-wide">
                 Newsletter
               </h4>
-              <p className="text-gray-300 text-lg mb-4 font-caslon">
+              <p className="text-gray-300 text-sm mb-4 font-caslon">
                 Subscribe for exclusive offers and new collections
               </p>
-              <div className="flex">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-white/20 rounded-l-lg focus:outline-none focus:border-white/40 text-lg font-caslon text-white placeholder-gray-400"
+                  className="flex-1 px-3 py-2 bg-gray-800/50 border border-white/20 rounded-lg focus:outline-none focus:border-white/40 text-sm font-caslon text-white placeholder-gray-400"
                 />
-                <button className="px-6 py-3 bg-white text-black rounded-r-lg hover:bg-gray-100 transition-colors font-caslon text-lg font-normal tracking-wide">
+                <button className="px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-100 transition-colors font-caslon text-sm font-normal tracking-wide">
                   Subscribe
                 </button>
               </div>
@@ -144,10 +144,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="font-caslon text-gray-300 text-lg">
+            <div className="font-caslon text-gray-300 text-sm">
               © 2024 Sultana Silk. All rights reserved.
             </div>
-            <div className="flex space-x-8 font-caslon text-lg">
+            <div className="flex space-x-6 font-caslon text-sm">
               <Link href="/privacy" className="text-gray-300 hover:text-white transition-colors">
                 Privacy Policy
               </Link>

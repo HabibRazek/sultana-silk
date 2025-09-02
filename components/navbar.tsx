@@ -57,7 +57,7 @@ export default function Navbar() {
                     "p-2 transition-colors duration-300",
                     isScrolled
                       ? "text-black hover:text-gray-800"
-                      : "text-amber-200 hover:text-amber-300"
+                      : "text-white hover:text-white/80"
                   )}
                 >
                   <Menu className="h-5 w-5" aria-hidden="true" />
@@ -114,7 +114,7 @@ export default function Navbar() {
               "p-2 transition-colors duration-300",
               isScrolled
                 ? "text-black hover:text-gray-800"
-                : "text-amber-200 hover:text-amber-300"
+                : "text-white hover:text-white/80"
             )}>
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>
@@ -125,7 +125,7 @@ export default function Navbar() {
               "p-2 transition-colors duration-300",
               isScrolled
                 ? "text-black hover:text-gray-800"
-                : "text-amber-200 hover:text-amber-300"
+                : "text-white hover:text-white/80"
             )}>
               <User className="h-5 w-5" />
               <span className="sr-only">Account</span>
@@ -138,14 +138,14 @@ export default function Navbar() {
                 "relative p-2 transition-colors duration-300",
                 isScrolled
                   ? "text-black hover:text-gray-800"
-                  : "text-amber-200 hover:text-amber-300"
+                  : "text-white hover:text-white/80"
               )}
             >
               <ShoppingBag className="h-5 w-5" />
               {cartItemsCount() > 0 && (
                 <span className={cn(
                   "absolute -top-1 -right-1 h-5 w-5 text-white text-xs font-medium rounded-full flex items-center justify-center",
-                  isScrolled ? "bg-black" : "bg-amber-300/80"
+                  isScrolled ? "bg-black" : "bg-white/80"
                 )}>
                   {cartItemsCount()}
                 </span>
