@@ -36,15 +36,15 @@ export default function ContactSection() {
         {/* Luxury Section Header */}
         <div className="text-center mb-10 lg:mb-12">
           <div className="inline-block mb-6">
-            <span className="font-caslon text-sm text-[#600703] uppercase tracking-[0.3em] border border-[#600703]/30 px-6 py-2 rounded-full bg-white/50 backdrop-blur-sm">
+            <span className="font-caslon text-xs text-[#600703] uppercase tracking-[0.3em] border border-[#600703]/30 px-6 py-2 rounded-full bg-white/50 backdrop-blur-sm">
               Exclusive Consultation
             </span>
           </div>
-          <h2 className="font-caslon text-4xl lg:text-6xl font-normal text-gray-900 mb-8 tracking-wide leading-tight">
+          <h2 className="font-caslon text-2xl lg:text-3xl font-normal text-gray-900 mb-8 tracking-wide leading-tight">
             Connect with
             <span className="block text-[#600703] italic">Sultana Silk</span>
           </h2>
-          <p className="font-caslon text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed tracking-wide">
+          <p className="font-caslon text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed tracking-wide">
             Experience personalized luxury through bespoke consultations and exclusive silk collections crafted for the discerning connoisseur
           </p>
         </div>
@@ -53,10 +53,10 @@ export default function ContactSection() {
           {/* Luxury Contact Information */}
           <div className="space-y-12">
             <div>
-              <h3 className="font-caslon text-3xl lg:text-4xl font-normal text-gray-900 mb-8 tracking-wide leading-tight">
+              <h3 className="font-caslon text-xl lg:text-2xl font-normal text-gray-900 mb-8 tracking-wide leading-tight">
                 Atelier & <span className="text-[#600703] italic">Boutique</span>
               </h3>
-              <p className="font-caslon text-lg text-gray-600 leading-relaxed tracking-wide">
+              <p className="font-caslon text-sm lg:text-base text-gray-600 leading-relaxed tracking-wide">
                 Visit our exclusive showroom for private consultations and personalized silk scarf experiences
               </p>
             </div>
@@ -68,10 +68,10 @@ export default function ContactSection() {
                     <MapPin className="w-6 h-6 text-[#600703]" />
                   </div>
                   <div>
-                    <h4 className="font-caslon text-lg font-normal text-gray-900 mb-2 tracking-wide">Location</h4>
-                    <p className="font-caslon text-base text-gray-600 leading-relaxed">
+                    <h4 className="font-caslon text-base font-normal text-gray-900 mb-2 tracking-wide">Location</h4>
+                    <p className="font-caslon text-sm text-gray-600 leading-relaxed">
                       Dubai, UAE<br />
-                      <span className="text-sm text-gray-500">Luxury Fashion District</span>
+                      <span className="text-xs text-gray-500">Luxury Fashion District</span>
                     </p>
                   </div>
                 </div>
@@ -83,10 +83,10 @@ export default function ContactSection() {
                     <Phone className="w-6 h-6 text-[#600703]" />
                   </div>
                   <div>
-                    <h4 className="font-caslon text-lg font-normal text-gray-900 mb-2 tracking-wide">Phone</h4>
-                    <p className="font-caslon text-base text-gray-600 leading-relaxed">
+                    <h4 className="font-caslon text-base font-normal text-gray-900 mb-2 tracking-wide">Phone</h4>
+                    <p className="font-caslon text-sm text-gray-600 leading-relaxed">
                       +971 50 185 9905<br />
-                      <span className="text-sm text-gray-500">Available 9 AM - 8 PM GST</span>
+                      <span className="text-xs text-gray-500">Available 9 AM - 8 PM GST</span>
                     </p>
                   </div>
                 </div>
@@ -98,10 +98,10 @@ export default function ContactSection() {
                     <Mail className="w-6 h-6 text-[#600703]" />
                   </div>
                   <div>
-                    <h4 className="font-caslon text-lg font-normal text-gray-900 mb-2 tracking-wide">Email</h4>
-                    <p className="font-caslon text-base text-gray-600 leading-relaxed">
+                    <h4 className="font-caslon text-base font-normal text-gray-900 mb-2 tracking-wide">Email</h4>
+                    <p className="font-caslon text-sm text-gray-600 leading-relaxed">
                       info@sultanasilk.com<br />
-                      <span className="text-sm text-gray-500">Response within 24 hours</span>
+                      <span className="text-xs text-gray-500">Response within 24 hours</span>
                     </p>
                   </div>
                 </div>
@@ -116,10 +116,10 @@ export default function ContactSection() {
 
             <div className="relative z-10">
               <div className="mb-10">
-                <h3 className="font-caslon text-3xl lg:text-4xl font-normal text-gray-900 mb-4 tracking-wide leading-tight">
+                <h3 className="font-caslon text-xl lg:text-2xl font-normal text-gray-900 mb-4 tracking-wide leading-tight">
                   Begin Your <span className="text-[#600703] italic">Journey</span>
                 </h3>
-                <p className="font-caslon text-lg text-gray-600 leading-relaxed tracking-wide">
+                <p className="font-caslon text-sm lg:text-base text-gray-600 leading-relaxed tracking-wide">
                   Share your vision and let us craft the perfect silk experience for you
                 </p>
               </div>
@@ -127,7 +127,7 @@ export default function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <label htmlFor="name" className="block font-caslon text-lg font-normal text-gray-800 mb-4 tracking-wide">
+                    <label htmlFor="name" className="block font-caslon text-sm font-normal text-gray-800 mb-4 tracking-wide">
                       Full Name
                     </label>
                     <input
@@ -136,14 +136,14 @@ export default function ContactSection() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-6 py-5 border-2 border-gray-200/70 rounded-2xl focus:ring-2 focus:ring-[#600703]/20 focus:border-[#600703] transition-all duration-300 font-caslon text-lg bg-white/70 backdrop-blur-sm placeholder-gray-400"
+                      className="w-full px-6 py-5 border-2 border-gray-200/70 rounded-2xl focus:ring-2 focus:ring-[#600703]/20 focus:border-[#600703] transition-all duration-300 font-caslon text-sm bg-white/70 backdrop-blur-sm placeholder-gray-400"
                       placeholder="Enter your full name"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block font-caslon text-lg font-normal text-gray-800 mb-4 tracking-wide">
+                    <label htmlFor="email" className="block font-caslon text-sm font-normal text-gray-800 mb-4 tracking-wide">
                       Email Address
                     </label>
                     <input
@@ -152,7 +152,7 @@ export default function ContactSection() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-6 py-5 border-2 border-gray-200/70 rounded-2xl focus:ring-2 focus:ring-[#600703]/20 focus:border-[#600703] transition-all duration-300 font-caslon text-lg bg-white/70 backdrop-blur-sm placeholder-gray-400"
+                      className="w-full px-6 py-5 border-2 border-gray-200/70 rounded-2xl focus:ring-2 focus:ring-[#600703]/20 focus:border-[#600703] transition-all duration-300 font-caslon text-sm bg-white/70 backdrop-blur-sm placeholder-gray-400"
                       placeholder="your@email.com"
                       required
                     />
@@ -160,7 +160,7 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block font-caslon text-lg font-normal text-gray-800 mb-4 tracking-wide">
+                  <label htmlFor="phone" className="block font-caslon text-sm font-normal text-gray-800 mb-4 tracking-wide">
                     Phone Number
                   </label>
                   <input
@@ -169,13 +169,13 @@ export default function ContactSection() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-6 py-5 border-2 border-gray-200/70 rounded-2xl focus:ring-2 focus:ring-[#600703]/20 focus:border-[#600703] transition-all duration-300 font-caslon text-lg bg-white/70 backdrop-blur-sm placeholder-gray-400"
+                    className="w-full px-6 py-5 border-2 border-gray-200/70 rounded-2xl focus:ring-2 focus:ring-[#600703]/20 focus:border-[#600703] transition-all duration-300 font-caslon text-sm bg-white/70 backdrop-blur-sm placeholder-gray-400"
                     placeholder="+971 50 000 0000"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block font-caslon text-lg font-normal text-gray-800 mb-4 tracking-wide">
+                  <label htmlFor="message" className="block font-caslon text-sm font-normal text-gray-800 mb-4 tracking-wide">
                     Your Message
                   </label>
                   <textarea
@@ -184,7 +184,7 @@ export default function ContactSection() {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-6 py-5 border-2 border-gray-200/70 rounded-2xl focus:ring-2 focus:ring-[#600703]/20 focus:border-[#600703] transition-all duration-300 font-caslon text-lg resize-none bg-white/70 backdrop-blur-sm placeholder-gray-400"
+                    className="w-full px-6 py-5 border-2 border-gray-200/70 rounded-2xl focus:ring-2 focus:ring-[#600703]/20 focus:border-[#600703] transition-all duration-300 font-caslon text-sm resize-none bg-white/70 backdrop-blur-sm placeholder-gray-400"
                     placeholder="Share your vision for the perfect silk scarf experience. Tell us about your style preferences, occasions, or any special requirements..."
                     required
                   ></textarea>
@@ -193,7 +193,7 @@ export default function ContactSection() {
                 <div className="pt-6">
                   <button
                     type="submit"
-                    className="w-full border-2 border-[#600703] text-[#600703] hover:bg-[#600703] hover:text-white px-8 py-6 rounded-2xl font-caslon text-xl font-normal tracking-wide uppercase transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl backdrop-blur-sm"
+                    className="w-full border-2 border-[#600703] text-[#600703] hover:bg-[#600703] hover:text-white px-8 py-6 rounded-2xl font-caslon text-base font-normal tracking-wide uppercase transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl backdrop-blur-sm"
                   >
                     Begin Your Journey
                   </button>

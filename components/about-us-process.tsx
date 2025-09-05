@@ -8,10 +8,10 @@ export default function AboutUsProcess() {
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10 lg:mb-12">
-          <h2 className="font-caslon text-4xl lg:text-5xl font-normal text-[#600703] mb-4 tracking-wide leading-tight">
+          <h2 className="font-caslon text-2xl lg:text-3xl font-normal text-[#600703] mb-4 tracking-wide leading-tight">
             About us
           </h2>
-          <p className="font-caslon text-2xl lg:text-3xl font-normal text-gray-900 tracking-wide">
+          <p className="font-caslon text-lg lg:text-xl font-normal text-gray-900 tracking-wide">
             From A to Z
           </p>
         </div>
@@ -32,12 +32,12 @@ export default function AboutUsProcess() {
             </div>
 
             {/* Title */}
-            <h3 className="font-caslon text-xl lg:text-2xl font-normal text-gray-900 mb-4 tracking-wide">
+            <h3 className="font-caslon text-lg lg:text-xl font-normal text-gray-900 mb-4 tracking-wide">
               The design
             </h3>
 
             {/* Description */}
-            <p className="font-caslon text-base lg:text-lg text-gray-700 leading-relaxed tracking-wide">
+            <p className="font-caslon text-sm lg:text-base text-gray-700 leading-relaxed tracking-wide">
               At SULTANA, we create our SILK Scarves with you in mind. All our products are imagined and designed in Tunisia, in our offices on Mahdia.
             </p>
           </div>
@@ -55,12 +55,12 @@ export default function AboutUsProcess() {
             </div>
 
             {/* Title */}
-            <h3 className="font-caslon text-xl lg:text-2xl font-normal text-gray-900 mb-4 tracking-wide">
+            <h3 className="font-caslon text-lg lg:text-xl font-normal text-gray-900 mb-4 tracking-wide">
               Materials
             </h3>
 
             {/* Description */}
-            <p className="font-caslon text-base lg:text-lg text-gray-700 leading-relaxed tracking-wide">
+            <p className="font-caslon text-sm lg:text-base text-gray-700 leading-relaxed tracking-wide">
               Our Silk come exclusively from hides recovered from the Nature. We work exclusively with tanneries in Italy and France.
             </p>
           </div>
@@ -78,12 +78,12 @@ export default function AboutUsProcess() {
             </div>
 
             {/* Title */}
-            <h3 className="font-caslon text-xl lg:text-2xl font-normal text-gray-900 mb-4 tracking-wide">
+            <h3 className="font-caslon text-lg lg:text-xl font-normal text-gray-900 mb-4 tracking-wide">
               The know-how
             </h3>
 
             {/* Description */}
-            <p className="font-caslon text-base lg:text-lg text-gray-700 leading-relaxed tracking-wide">
+            <p className="font-caslon text-sm lg:text-base text-gray-700 leading-relaxed tracking-wide">
               Each step of the manufacturing process is carried out according to the strict specifications of the leatherworker&apos;s craft.
             </p>
           </div>
@@ -93,10 +93,10 @@ export default function AboutUsProcess() {
         {/* Additional Content Section */}
         <div className="mt-10 lg:mt-12 text-center">
           <div className="max-w-4xl mx-auto">
-            <p className="font-caslon text-lg lg:text-xl text-gray-600 leading-relaxed tracking-wide mb-8">
+            <p className="font-caslon text-base lg:text-lg text-gray-600 leading-relaxed tracking-wide mb-8">
               Every Sultana Silk scarf tells a story of meticulous craftsmanship, from the initial design concept in our Tunisian atelier to the final luxurious product that graces your wardrobe.
             </p>
-            <div className="inline-block border-2 border-[#600703] text-[#600703] hover:bg-[#600703] hover:text-white px-8 py-4 font-caslon text-lg font-normal tracking-wide uppercase transition-all duration-300 cursor-pointer">
+            <div className="inline-block border-2 border-[#600703] text-[#600703] hover:bg-[#600703] hover:text-white px-8 py-4 font-caslon text-base font-normal tracking-wide uppercase transition-all duration-300 cursor-pointer">
               Discover Our Heritage
             </div>
           </div>

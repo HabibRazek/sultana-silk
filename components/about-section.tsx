@@ -12,16 +12,16 @@ export default function AboutSection() {
           <div className="space-y-6">
             {/* Section Label */}
             <div className="mb-6">
-              <span className="font-caslon text-sm font-normal text-amber-600 tracking-[0.3em] uppercase">
+              <span className="font-caslon text-xs font-normal text-amber-600 tracking-[0.3em] uppercase">
                 Our Story
               </span>
             </div>
 
-            <h2 className="font-caslon text-6xl lg:text-7xl font-normal text-gray-900 mb-8 tracking-wide leading-tight">
+            <h2 className="font-caslon text-3xl lg:text-4xl font-normal text-gray-900 mb-8 tracking-wide leading-tight">
               The Art of Silk
             </h2>
 
-            <div className="space-y-8 font-caslon text-xl text-gray-700 leading-relaxed">
+            <div className="space-y-4 font-caslon text-sm text-gray-700 leading-relaxed">
               <p>
                 At Sultana Silk, we believe that true luxury lies in the perfect harmony between
                 tradition and innovation. Each scarf in our collection is a testament to the
