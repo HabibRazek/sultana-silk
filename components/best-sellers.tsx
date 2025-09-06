@@ -51,52 +51,51 @@ const bestSellerProducts: Product[] = [
     image: '/products/blue-yellow.png',
     colors: ['Deep Blue', 'Turquoise', 'Ivory', 'Golden Yellow']
   },
-  
 ]
 
 export default function BestSellers() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
   return (
-    <section className="py-6 bg-white">
+    <section className="py-8 md:py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div className="text-center mb-10">
-          <h2 className="font-caslon text-2xl lg:text-3xl font-normal text-red-900 tracking-[0.2em] uppercase">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="font-caslon text-sm md:text-lg lg:text-xl font-normal text-red-900 tracking-[0.15em] uppercase">
             Our Best Sellers
           </h2>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-10">
+        {/* Products Grid - 2 columns on mobile, 4 on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12">
           {bestSellerProducts.map((product) => (
             <div
               key={product.id}
-              className="group cursor-pointer text-center"
+              className="group cursor-pointer text-center transition-all duration-300"
               onClick={() => setSelectedProduct(product)}
             >
               {/* Product Image */}
-              <div className="relative overflow-hidden bg-white aspect-[4/5] mb-8 w-full">
+              <div className="relative overflow-hidden bg-white aspect-[3/4] mb-3 md:mb-6 w-full">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-contain transition-transform duration-500 group-hover:scale-105 p-2"
+                  className="object-contain transition-transform duration-500 group-hover:scale-105 p-2 md:p-3"
                 />
               </div>
 
               {/* Product Name */}
-              <h3 className="font-caslon text-sm lg:text-base font-normal text-gray-900 mb-2 tracking-wide leading-tight">
+              <h3 className="font-caslon text-xs md:text-sm font-normal text-gray-900 mb-1 md:mb-2 tracking-wider leading-tight line-clamp-2">
                 {product.name.replace('Sultana ', '').replace(' Silk', '')}
               </h3>
 
               {/* Product Description - Short */}
-              <p className="font-caslon text-xs lg:text-sm text-gray-600 mb-3 leading-relaxed">
+              <p className="font-caslon text-[10px] md:text-xs text-gray-600 mb-1 md:mb-2 leading-relaxed tracking-wide line-clamp-2">
                 {product.colors.slice(0, 2).join(', ')}
               </p>
 
               {/* Price */}
-              <p className="font-caslon text-sm lg:text-base font-normal text-gray-900">
+              <p className="font-caslon text-xs md:text-xs font-normal text-gray-900 tracking-wider">
                 {product.price}
               </p>
             </div>
@@ -107,7 +106,7 @@ export default function BestSellers() {
         <div className="text-center">
           <Link
             href="/collection"
-            className="btn-luxury font-caslon text-lg font-normal tracking-[0.1em] uppercase inline-flex items-center justify-center"
+            className="inline-block border border-red-900 text-red-900 px-4 md:px-6 py-1.5 md:py-2 font-caslon text-xs font-normal tracking-[0.2em] uppercase transition-all duration-300 hover:bg-red-900 hover:text-white"
           >
             VIEW ALL
           </Link>
@@ -116,48 +115,48 @@ export default function BestSellers() {
 
       {/* Product Modal */}
       {selectedProduct && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-8">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl max-w-5xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-4 md:p-8">
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="float-right text-gray-400 hover:text-gray-600 text-2xl"
+                className="float-right text-gray-500 hover:text-gray-700 text-xl transition-colors"
               >
                 ×
               </button>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 pt-2">
                 {/* Product Image */}
-                <div className="relative aspect-[4/5] w-full">
+                <div className="relative aspect-[3/4] w-full">
                   <Image
                     src={selectedProduct.image}
                     alt={selectedProduct.name}
                     fill
-                    className="object-contain p-4"
+                    className="object-contain p-2 md:p-4"
                   />
                 </div>
 
                 {/* Product Details */}
-                <div>
-                  <h3 className="font-caslon text-4xl font-normal text-gray-900 mb-4 tracking-wide">
+                <div className="mt-4 md:mt-0">
+                  <h3 className="font-caslon text-lg md:text-2xl font-normal text-gray-900 mb-3 md:mb-4 tracking-wide">
                     {selectedProduct.name}
                   </h3>
 
-                  <p className="font-caslon text-lg text-gray-600 mb-6 leading-relaxed">
+                  <p className="font-caslon text-xs md:text-sm text-gray-600 mb-4 md:mb-6 leading-relaxed tracking-wide">
                     {selectedProduct.fullDescription}
                   </p>
 
                   {/* Color Palette */}
-                  <div className="mb-6">
-                    <h4 className="font-caslon text-sm font-normal text-gray-900 mb-3 uppercase tracking-wide">
+                  <div className="mb-4 md:mb-6">
+                    <h4 className="font-caslon text-xs font-normal text-gray-900 mb-2 md:mb-3 uppercase tracking-wider">
                       Color Palette
                     </h4>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1 md:gap-2">
                       {selectedProduct.colors.map((color, index) => (
                         <span
                           key={index}
-                          className="px-4 py-2 text-sm font-caslon text-gray-700 bg-gray-100 rounded-full"
+                          className="px-2 md:px-3 py-0.5 md:py-1 text-[10px] md:text-xs font-caslon text-gray-700 bg-gray-100 rounded-full tracking-wide"
                         >
                           {color}
                         </span>
@@ -166,16 +165,16 @@ export default function BestSellers() {
                   </div>
 
                   {/* Price */}
-                  <p className="font-caslon text-3xl font-normal text-gray-900 mb-8">
+                  <p className="font-caslon text-lg md:text-xl font-normal text-gray-900 mb-6 md:mb-8">
                     {selectedProduct.price}
                   </p>
 
                   {/* Action Buttons */}
-                  <div className="space-y-4">
-                    <button className="w-full btn-luxury font-caslon text-lg font-normal tracking-wide uppercase">
+                  <div className="space-y-2 md:space-y-3">
+                    <button className="w-full bg-gray-900 text-white px-4 md:px-6 py-2 md:py-3 font-caslon text-xs font-normal tracking-widest uppercase transition-opacity hover:opacity-90">
                       Add to Cart
                     </button>
-                    <button className="w-full border-2 border-gray-900 text-gray-900 px-8 py-4 font-caslon text-lg font-normal tracking-wide uppercase hover:bg-gray-900 hover:text-white transition-colors duration-300">
+                    <button className="w-full border border-gray-900 text-gray-900 px-4 md:px-6 py-2 md:py-3 font-caslon text-xs font-normal tracking-widest uppercase transition-colors duration-300 hover:bg-gray-900 hover:text-white">
                       Contact for Custom Order
                     </button>
                   </div>

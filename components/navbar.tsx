@@ -9,10 +9,10 @@ import { cn } from '@/lib/utils'
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { VisuallyHidden } from '@/components/ui/visually-hidden'
 
 const navigation = [
   { name: 'HOME', href: '/' },
@@ -47,8 +47,8 @@ export default function Navbar() {
 
       <nav className="relative mx-auto w-11/12 px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex h-20 items-center justify-between">
-          {/* Left side - Navigation Menu Button */}
-          <div className="flex items-center flex-1">
+          {/* Left side - Menu Button (Desktop only) */}
+          <div className="hidden lg:block">
             <Sheet>
               <SheetTrigger asChild>
                 <button
@@ -64,18 +64,25 @@ export default function Navbar() {
                   <span className="sr-only">Open navigation menu</span>
                 </button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[280px] sm:w-[300px] bg-white border-none">
-                <SheetHeader>
-                  <SheetTitle className="sr-only">
-                    Navigation
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col space-y-1 mt-12">
+              <SheetContent side="left" className="w-[380px] bg-black border-none text-white p-0">
+                <VisuallyHidden>
+                  <SheetTitle>Navigation Menu</SheetTitle>
+                </VisuallyHidden>
+                <div className="p-6 flex justify-center items-center">
+                  <Image
+                    src="/logo/sultana-silk-logo.png"
+                    alt="Sultana Silk"
+                    width={140}
+                    height={56}
+                    className="h-14 w-auto"
+                  />
+                </div>
+                <div className="flex flex-col mt-8">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="font-caslon font-normal text-sm text-gray-700 hover:text-amber-600 transition-colors duration-200 py-3 px-4"
+                      className="font-sans text-xs uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-300 py-4 px-8 hover:bg-gray-900"
                     >
                       {item.name}
                     </Link>
@@ -85,9 +92,12 @@ export default function Navbar() {
             </Sheet>
           </div>
 
-          {/* Center - Logo */}
-          <div className="flex items-center justify-center py-6 relative z-10">
-            <Link href="/" className="flex items-center mx-4 sm:mx-12 px-2 sm:px-6 py-2">
+          {/* Center - Logo (Desktop) / Left - Logo (Mobile) */}
+          <div className={cn(
+            "flex items-center",
+            "lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2"
+          )}>
+            <Link href="/" className="flex items-center">
               {/* Desktop Logo - White by default, black on hover/scroll */}
               <Image
                 src={isScrolled ? "/logo/sultana-silk-logo-black-v.png" : "/logo/sultana-silk-logo.png"}
@@ -108,10 +118,10 @@ export default function Navbar() {
           </div>
 
           {/* Right side - Icons */}
-          <div className="flex items-center space-x-4 lg:flex-1 lg:justify-end">
-            {/* Search */}
+          <div className="flex items-center space-x-4">
+            {/* Search (hidden on mobile) */}
             <button className={cn(
-              "p-2 transition-colors duration-300",
+              "p-2 transition-colors duration-300 hidden lg:block",
               isScrolled
                 ? "text-black hover:text-gray-800"
                 : "text-white hover:text-white/80"
@@ -120,9 +130,9 @@ export default function Navbar() {
               <span className="sr-only">Search</span>
             </button>
 
-            {/* User Account */}
+            {/* User Account (hidden on mobile) */}
             <button className={cn(
-              "p-2 transition-colors duration-300",
+              "p-2 transition-colors duration-300 hidden lg:block",
               isScrolled
                 ? "text-black hover:text-gray-800"
                 : "text-white hover:text-white/80"
@@ -153,11 +163,52 @@ export default function Navbar() {
               <span className="sr-only">Shopping cart</span>
             </button>
 
-
+            {/* Menu Button (Mobile only) */}
+            <div className="lg:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <button
+                    type="button"
+                    className={cn(
+                      "p-2 transition-colors duration-300",
+                      isScrolled
+                        ? "text-black hover:text-gray-800"
+                        : "text-white hover:text-white/80"
+                    )}
+                  >
+                    <Menu className="h-5 w-5" aria-hidden="true" />
+                    <span className="sr-only">Open navigation menu</span>
+                  </button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-full bg-black border-none text-white p-0" >
+                  <VisuallyHidden>
+                    <SheetTitle>Mobile Navigation Menu</SheetTitle>
+                  </VisuallyHidden>
+                  <div className="p-6 flex justify-center items-center">
+                    <Image
+                      src="/logo/sultana-silk-logo.png"
+                      alt="Sultana Silk"
+                      width={120}
+                      height={48}
+                      className="h-12 w-auto"
+                    />
+                  </div>
+                  <div className="flex flex-col mt-6">
+                    {navigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="font-sans text-xs uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-300 py-4 px-6 hover:bg-gray-900"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
-
-
       </nav>
     </header>
   )

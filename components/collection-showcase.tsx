@@ -5,40 +5,44 @@ import Link from 'next/link'
 
 export default function CollectionShowcase() {
   return (
-    <section className="w-full pt-8 lg:pt-12">
-      {/* Title Section */}
-      <div className="text-center mb-8 lg:mb-10">
-        <div className="inline-block bg-[#600703] text-white px-8 py-3 font-caslon text-lg uppercase tracking-[0.2em]">
-          ALL COLLECTIONS
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 px-4 lg:px-8">
+    <section className="w-full pt-8 md:pt-12 lg:pt-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-10 px-4 md:px-6 lg:px-10">
         {/* Left Collection - National Day UAE */}
-        <div className="relative h-[70vh] overflow-hidden group">
-          {/* Background Image */}
+        <div className="relative h-[50vh] md:h-[65vh] overflow-hidden group">
+          {/* Background Image - Different for mobile and desktop */}
           <div className="absolute inset-0">
+            {/* Mobile Image */}
             <Image
-              src="/collection/1.jpeg"
+              src="/hero-section/1-m.jpeg"
               alt="National Day UAE Collection"
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105 md:hidden"
+              priority
             />
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+            {/* Desktop Image */}
+            <Image
+              src="/hero-section/4.jpeg"
+              alt="National Day UAE Collection"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105 hidden md:block"
+              priority
+            />
           </div>
 
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent"></div>
+
           {/* Content Overlay */}
-          <div className="relative z-10 h-full flex flex-col justify-center px-8 lg:px-12">
+          <div className="relative z-10 h-full flex flex-col justify-end pb-8 md:justify-center md:pb-0 px-6 md:px-10 lg:px-14">
             {/* Limited Edition Badge */}
-            <div className="mb-4">
-              <span className="font-caslon text-sm text-white/90 uppercase tracking-[0.3em] border border-white/30 px-4 py-2 rounded-full backdrop-blur-sm">
+            <div className="mb-4 md:mb-6">
+              <span className="font-caslon text-xs text-white/90 uppercase tracking-[0.2em] border border-white/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
                 Limited Edition
               </span>
             </div>
 
             {/* Main Title */}
-            <h2 className="font-caslon text-4xl lg:text-5xl font-normal text-white mb-8 tracking-wide leading-tight">
+            <h2 className="font-caslon text-2xl md:text-3xl lg:text-4xl font-normal text-white mb-4 md:mb-6 tracking-wide leading-tight">
               National Day UAE
             </h2>
 
@@ -46,7 +50,7 @@ export default function CollectionShowcase() {
             <div>
               <Link
                 href="/collections/national-day-uae"
-                className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 font-caslon text-lg font-normal tracking-wide uppercase transition-all duration-300 backdrop-blur-sm"
+                className="inline-block border border-white text-white hover:bg-white hover:text-black px-4 md:px-6 py-2 md:py-2.5 font-caslon text-xs md:text-sm font-normal tracking-wider uppercase transition-all duration-300 backdrop-blur-sm"
               >
                 Explore Collection
               </Link>
@@ -55,30 +59,41 @@ export default function CollectionShowcase() {
         </div>
 
         {/* Right Collection - Sultana */}
-        <div className="relative h-[70vh] overflow-hidden group">
-          {/* Background Image */}
+        <div className="relative h-[50vh] md:h-[65vh] overflow-hidden group">
+          {/* Background Image - Different for mobile and desktop */}
           <div className="absolute inset-0">
+            {/* Mobile Image */}
             <Image
-              src="/collection/2.jpeg"
+              src="/hero-section/2-m.jpeg"
               alt="Sultana Collection"
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105 md:hidden"
+              priority
             />
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/40 to-transparent"></div>
+            {/* Desktop Image */}
+            <Image
+              src="/hero-section/1.jpeg"
+              alt="Sultana Collection"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105 hidden md:block"
+              priority
+            />
           </div>
 
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent"></div>
+
           {/* Content Overlay */}
-          <div className="relative z-10 h-full flex flex-col justify-center px-8 lg:px-12">
+          <div className="relative z-10 h-full flex flex-col justify-end pb-8 md:justify-center md:pb-0 px-6 md:px-10 lg:px-14">
             {/* New Arrival Badge */}
-            <div className="mb-4">
-              <span className="font-caslon text-sm text-white/90 uppercase tracking-[0.3em] border border-white/30 px-4 py-2 rounded-full backdrop-blur-sm">
+            <div className="mb-4 md:mb-6">
+              <span className="font-caslon text-xs text-white/90 uppercase tracking-[0.2em] border border-white/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
                 New Arrival
               </span>
             </div>
 
             {/* Main Title */}
-            <h2 className="font-caslon text-4xl lg:text-5xl font-normal text-white mb-8 tracking-wide leading-tight">
+            <h2 className="font-caslon text-2xl md:text-3xl lg:text-4xl font-normal text-white mb-4 md:mb-6 tracking-wide leading-tight">
               SULTANA
             </h2>
 
@@ -86,7 +101,7 @@ export default function CollectionShowcase() {
             <div>
               <Link
                 href="/collections/sultana"
-                className="inline-block border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 font-caslon text-lg font-normal tracking-wide uppercase transition-all duration-300 backdrop-blur-sm"
+                className="inline-block border border-white text-white hover:bg-white hover:text-black px-4 md:px-6 py-2 md:py-2.5 font-caslon text-xs md:text-sm font-normal tracking-wider uppercase transition-all duration-300 backdrop-blur-sm"
               >
                 Explore Collection
               </Link>

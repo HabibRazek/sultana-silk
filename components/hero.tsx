@@ -10,6 +10,8 @@ const heroImages = [
   '/hero-section/4.jpeg',
 ]
 
+const mobileHeroImage = '/hero-section//luxury-fashion-woman-black-suit-designer-scarf-red-background-mobile.jpeg'
+
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
@@ -31,8 +33,8 @@ export default function Hero() {
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
     >
-      {/* Luxury Diaporama Background */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* Desktop Carousel Background */}
+      <div className="absolute inset-0 w-full h-full hidden md:block">
         {heroImages.map((image, index) => (
           <div
             key={index}
@@ -51,14 +53,27 @@ export default function Hero() {
         ))}
       </div>
 
+      {/* Mobile Single Image Background */}
+      <div className="absolute inset-0 w-full h-full md:hidden">
+        <div
+          className="absolute inset-0 w-full h-full"
+          style={{
+            backgroundImage: `url(${mobileHeroImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+      </div>
+
       {/* Luxury Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30"></div>
 
-      {/* Main Content Container - Using w-9/12 and mx-auto */}
+      {/* Main Content Container */}
       <div className="relative z-10 flex items-center h-full w-full">
-        <div className="w-8/12 mx-auto">
-          <div className="text-left">
+        <div className="w-11/12 md:w-8/12 mx-auto">
+          <div className="text-center md:text-left">
             {/* Small Label */}
             <p className="font-caslon text-sm sm:text-base text-white/90 mb-4 tracking-[0.3em] uppercase animate-fade-in-up">
               Trusted Source Finest Silk
@@ -71,6 +86,7 @@ export default function Hero() {
             </h1>
 
             {/* Shop Now Button */}
+
             <div className="mt-8 animate-fade-in-up animation-delay-400">
               <Link
                 href="/shop"
@@ -84,8 +100,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Luxury Carousel Controls */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+      {/* Desktop Carousel Controls */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 hidden md:flex">
         <div className="flex items-center space-x-6">
           {/* Previous Button */}
           <button
